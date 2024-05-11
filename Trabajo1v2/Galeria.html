@@ -6,6 +6,7 @@
     <title>Galeria</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="script/scriptGaleria.js"></script>
+    <script src="script/Rutina_borrar_esconder.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/Galeria.css">
     <link rel="stylesheet" href="CSS/quienesSomos.css">
@@ -22,7 +23,7 @@
     
             <div class="col d-none d-md-block">
               <div class="row">
-                <div class="col-4 "> <img src="img/Logo.png"width="15%" height="100%" ></div>
+                <div class="col-4 "> <img src="img/Logo.png"width="45px" height="45px" ></div>
                 <div class="col-4 " >
                   <ul class="nav nav-underline nav justify-content-center">
                     <li class="nav-item">
@@ -34,13 +35,13 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="Quienes_somos.html" style="color: blanchedalmond;">Quienes somos</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="contacto.html" style="color: blanchedalmond;">Contacto</a>
+                  </li>
                 </ul>
                 </div>
                   <div class="col-4" style="justify-content: end;">
                   <ul class="nav nav-underline nav justify-content-end">
-                    <li class="nav-item" >
-                      <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
-                    </li>
                     <li class="nav-item">
                       <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#Registro">registrar</button>
                     </li>
@@ -67,8 +68,8 @@
         <li><a class="dropdown-item" href="Index.html" >Indice</a></li>
         <li><a class="dropdown-item"href="Galeria.html" >Galeria</a></li>
         <li><a class="dropdown-item" href="Quienes_somos.html" >Quienes somos</a></li>
+        <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Registro">Registro</a></li>
-        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">Inicio</a></li>
       </ul>
     </div>
   </div>
@@ -84,26 +85,30 @@
           <div class="modal-body">
 
             <label for="correo">Correo</label><br>
-            <input type="text" id="correo" placeholder="Ingrese su correo">
+            <input type="text" id="correo" placeholder="Ingrese su correo" class="formulario">
             <div id="errorCorreo" class="errores">Ingrese un correo con <br>formato valido</div><br>
 
             <label for="confirmar_correo">Confirme correo</label><br>
-            <input type="text" id="confirmar_correo" placeholder="Confirme su correo">
+            <input type="text" id="confirmar_correo" placeholder="Confirme su correo" class="formulario">
             <div id="errorConfirmarCorreo" class="errores ">El correo no coincide</div><br>
 
 
 
           <label for="user">Usuario</label><br>
-          <input type="text" id="user" placeholder="Ingrese su usuario">
+          <input type="text" id="user" placeholder="Ingrese su usuario" class="formulario">
           <div id="errorUser" class="errores">Ingrese un usuario entre <br>5 a 10 caracteres</div><br>
 
           <label for="contrasena">Contraseña</label><br>
-          <input type="text" id="contrasena" placeholder="Ingrese su contraseña">
+          <input type="password" id="contrasena" placeholder="Ingrese su contraseña" class="formulario">
           <div id="errorPass" class="errores">Ingrese una contraseña entre <br>con minimo una mayuscula, minuscula y un caracter <br> especial</div><br>
-
+          <img src="img/eye_hide_regular_icon_203604.png" class="esconder" onclick="esconder()" alt="" id="eye" width="40px" height="20px">
+          
           <label for="confirmarContrasena"> Confirme contraseña</label><br>
-          <input type="text" id="confirmarContrasena" placeholder="Ingrese su contraseña">
+          <input type="password" id="confirmarContrasena" placeholder="Ingrese su contraseña"  class="formulario">
           <div id="errorConfirmarPass" class="errores">Las contraseñas no coinciden</div><br>
+          <img src="img/delete_remove_bin_icon-icons.com_72400.png" onclick="borrar()" id="borrar" class="esconder" width="40px" height="20px">
+
+          
 
           
           </div>
@@ -117,7 +122,7 @@
     <br>
 <!--Formulario fin-->
 <!-- Imagenes -->
-
+<main id="items">
   <div style="display: flex; justify-content:center; ">
     <div class="fondo_div" >
       <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
@@ -140,7 +145,7 @@
           <div class="box">
             Codigo: 352
             <br> 
-            Precio: $89.900
+            <p class="card-text">Precio: $89.900</p>
             <br>
             Los pies de gato son las zapatillas que utilizan los escaladores, son llamadas asi a causa de su ligereza, flexibilidad y 
             adherentes, gracias a que en sus suelas usan una goma especial, que entrega una mayor adherencia y precisión
@@ -156,7 +161,7 @@
                 <option value="42"> Talla 42 H</option>
               </optgroup>
               </select>
-              <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" aria-label="confirmar" style="margin-left: 50%; margin-bottom: 6%">confirmar</button>
+              <button type="button" class="btn btn-outline-primary" aria-label="confirmar" style="margin-left: 50%; margin-bottom: 6%" marcador="1">+</button>
 
           </div>
           
@@ -345,25 +350,27 @@
 
 </div>
   
-  
-<footer>
-<div class="footer">
-      Benjamin Rodriguez
-      Brian Martel
-      Daniel Avilar
-      @Copyrigth Derechos reservados.
+</main>
+ 
 
-      
-
-          <a #link1 href="linkInstagram"> <img src="img/instagram.png" alt="@SpiderBoulder" width="10%" height="100%"> </img></a>
-
-        
-      
-    </div>
-</footer>
 
    
-    
+      
+<footer>
+  <div class="footer">
+        Benjamin Rodriguez
+        Brian Martel
+        Daniel Avilar
+        @Copyrigth Derechos reservados.
+  
+        
+  
+            <a #link1 href="linkInstagram"> <img src="img/instagram.png" alt="@SpiderBoulder" width="10%" height="100%"> </img></a>
+  
+          
+        
+      </div>
+  </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
