@@ -1,7 +1,8 @@
 .footer {
-   position: fixed;
+   position: static;
    left: 0;
    bottom: 0;
+   height: 15%;
    width: 100%;
    background-color: rgb(223, 142, 43);
    color: black;
@@ -52,8 +53,6 @@
 
 }
 
-
-
 #link1{
    text-align: center;
    display: flex;
@@ -62,6 +61,7 @@
 
 .footer-index
 {
+   position: relative;
    width: 100%;
    color: black;
    text-align: center;
