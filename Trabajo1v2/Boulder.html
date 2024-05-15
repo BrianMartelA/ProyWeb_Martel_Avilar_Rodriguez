@@ -12,25 +12,72 @@
 
 </head>
 <body>
-    <div class="barraNav">
-        <ul class="nav nav-underline nav justify-content-center" >
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Index.html" style="color: blanchedalmond;">Indice</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Galeria.html" style="color: blanchedalmond;">Galeria</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Quienes_somos.html" style="color: blanchedalmond;">Quienes somos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Contacto.html" style="color: blanchedalmond;">Contactanos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Boulder.html" style="color: blanchedalmond;">Boulders</a>
-            </li>
-        </ul>
-    </div>
+
+     
+<!-- Barra de navegacion -->
+<!--Barra navegacion pantalla -->
+
+  <!-- Formulario inicio -->
+
+  <body style="Background-color : #a06c3f; " >
+    <div class="container">
+    
+        <div class="col d-none d-md-block">
+          <div class="row">
+            <div class="col-4 "> <img src="img/Logo.png"width="45px" height="45px" ></div>
+            <div class="col-4 " >
+              <ul class="nav nav-underline nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Index.html" style="color: blanchedalmond;">Indice</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Galeria.html" style="color: blanchedalmond;">Galeria</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Quienes_somos.html" style="color: blanchedalmond;">Quienes somos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="Contacto.html" style="color: blanchedalmond;">Contacto</a>
+                </li>
+              </ul>
+            </div>
+              <div class="col-4" style="justify-content: end;">
+              <ul class="nav nav-underline nav justify-content-end">
+                <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark" onclick="location.href='Registro.html'">registrar</button>
+                </li>
+                <li class="nav-item">
+                  <button type="button" class="btn btn-outline-dark" onclick="location.href='Boulder.html'">Boulder</button>
+                </li>
+              </ul>
+
+              </div>
+          </div>
+        
+        </div>
+          
+        
+    
+
+</div>
+
+<!--Barra navegacion tablet/celular -->
+
+<div class="col d-block d-md-none">
+<div class="dropdown">
+  <button class="btn btn-venta dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Menu
+  </button>
+  <ul class="dropdown-menu" >
+    <li><a class="dropdown-item" href="Index.html" >Indice</a></li>
+    <li><a class="dropdown-item"href="Galeria.html" >Galeria</a></li>
+    <li><a class="dropdown-item" href="Quienes_somos.html" >Quienes somos</a></li>
+    <li><a class="dropdown-item" href="Contacto.html" >Contactanos</a></li>
+    <li><a class="dropdown-item" href="Registro.html">Registro</a></li>
+    <li><a class="dropdown-item" href="Boulder.html">Boulder</a></li>
+  </ul>
+</div>
+</div>
 
     <div class="contenedor">
         <div>
@@ -88,5 +135,8 @@
     </footer>
 
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCagHltazw8VRUVur5WTkhvt_3PREY6Ckg&callback=console.debug&libraries=maps,marker&v=beta"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
