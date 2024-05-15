@@ -144,6 +144,18 @@ body{
     float: right;
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 16%;
+    width: 100%;
+    background-color: rgb(223, 142, 43);
+    color: black;
+    text-align: center;
+    
+}
+
 @media (max-width: 800px){
 
     .contenido .info,
